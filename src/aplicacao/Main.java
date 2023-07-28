@@ -19,15 +19,15 @@ public class Main {
 			try {	
 				UI.clearScreen();	
 			
-				UI.printBoard(chessMatch.getPieces());
-				System.out.print("\nSource: ");
+				UI.printMatch(chessMatch);
+				System.out.print("\nEscolha uma peça: ");
 				ChessPosition source = UI.readChessPosition(sc);
 				
 				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPieces(), possibleMoves);
 				
-				System.out.print("\nTarget: ");
+				System.out.print("\nEscolha o destino: ");
 				ChessPosition target = UI.readChessPosition(sc);
 		
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
