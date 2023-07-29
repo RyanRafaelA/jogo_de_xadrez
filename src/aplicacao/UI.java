@@ -56,7 +56,10 @@ public class UI {
 		System.out.println();
 		printCapturedPieces(captured);
 		System.out.println("\nTurno: "+chessMatch.getTurn());
-		System.out.println("Esperando o jogador jogar: "+chessMatch.getCurrentePlayer());
+		System.out.println("Esperando a jogada da peça: "+chessMatch.getCurrentePlayer());
+		if(chessMatch.getCheck()) {
+			System.out.println("CHECK");
+		}
 	}
 	
 	public static void printBoard(ChessPiece[][] pieces) {
@@ -111,7 +114,6 @@ public class UI {
 		System.out.print("Preto: ");
 		System.out.print(ANSI_YELLOW);
 		System.out.println(Arrays.toString(black.toArray()));
-		System.out.print(ANSI_RESET);
-		
+		System.out.print(ANSI_RESET);	
 	}
 }
